@@ -1,0 +1,85 @@
+{
+  "name": "nft-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest",
+    "test:coverage": "jest --coverage --silent",
+    "test:watch": "jest --watch",
+    "test:precommit": "jest --watchAll=false --colors -o --silent --verbose",
+    "test:prepush": "CI=true && jest --watchAll=false --colors --coverage --silent --verbose --passWithNoTests",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cm": "cz"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "*",
+    "@reduxjs/toolkit": "^1.5.1",
+    "classnames": "^2.2.6",
+    "date-fns": "^2.21.1",
+    "next": "^10.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-query": "^3.15.2",
+    "react-redux": "^7.2.4",
+    "sass": "^1.32.13"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^13.1.8",
+    "@types/node": "^15.0.1",
+    "@types/react": "^17.0.4",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "babel-eslint": "^10.1.0",
+    "commitizen": "^4.2.3",
+    "cypress": "^7.2.0",
+    "cz-conventional-changelog": "^3.0.1",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-cypress": "^2.11.3",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest-dom": "^3.8.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-testing-library": "^3.10.1",
+    "husky": "^6.0.0",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
+    "prettier": "2.2.1",
+    "typescript": "^4.2.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "reporters": [
+      "default"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "collectCoverage": true
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --ext .jsx --ext .js --ext .ts --ext .tsx --ignore-path .gitignore"
+    ]
+  }
+}
