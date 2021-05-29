@@ -33,13 +33,5 @@ module.exports = {
         '@typescript-eslint',
         'simple-import-sort'
     ],
-    rules: {
-        'react/prop-types': 0,
-        'no-unused-vars': 0,
-        'sort-imports': 0,
-        'simple-import-sort/imports': 'warn',
-        '@typescript-eslint/no-empty-function': 'warn',
-        '@typescript-eslint/no-empty-interface': 'warn'
-    },
     ignorePatterns: ['/cypress/integration/examples', '/build']
 };
