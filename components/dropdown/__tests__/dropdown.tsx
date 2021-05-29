@@ -15,7 +15,7 @@ describe('SKU dropdown component', () => {
         userEvent.selectOptions(select, ["LTV719449/39/39"]);
         
         expect(select).toBeInTheDocument();
-        expect(select).toHaveValue("LTV719449/39/39")
+        expect(select).toHaveValue('LTV719449/39/39')
     });
 
 })
