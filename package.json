@@ -13,7 +13,8 @@
     "test:prepush": "CI=true && jest --watchAll=false --colors --coverage --silent --verbose --passWithNoTests",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cm": "cz"
+    "cm": "cz",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "^10.0.0",
