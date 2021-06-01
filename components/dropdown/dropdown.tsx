@@ -1,20 +1,27 @@
-import { useEffect } from "react"
-import {stockData} from "../../data/stock"
+import styles from "./dropdown.module.scss";
+import {getStock, options} from "../../functions/get-data";
 
-interface IStockData{
-    sku: string
-    stock: number
+interface Props{
+    setState: (val:any) => void;
 }
 
-const Dropdown: React.FC = () => {
+const Dropdown: React.FC<Props> = ({setState}) => {
+    
+    const stockAvailable = async (e) => {
+        try{
+            const val = await getStock(e.target.value);
+            setState(val?.qty);
+        }catch(e){
+            setState(e);
+        } 
+    }
+
     return (
         <>
             <label htmlFor="sku" aria-label="sku dropdown">Select a SKU:</label>
-            <select name="sku" id="sku">
+            <select name="sku" id="sku" className={styles.selectbox} onChange={stockAvailable}>
                 <option value=""></option>
-                {stockData.map((val:IStockData) => {
-                   return <option value={val.sku} key={val.sku}>{val.sku}</option>
-                })}         
+                {options()}      
             </select>
         </>
     )

@@ -1,4 +1,4 @@
-export const transacData = [
+export const transactData = [
    {
       "sku":"KED089097/68/09",
       "type":"order",
