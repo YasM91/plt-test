@@ -21,8 +21,6 @@
     "jsx": "preserve"
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
     "**/*.tsx",
     "__mocks__"
   ],

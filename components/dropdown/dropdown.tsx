@@ -7,7 +7,7 @@ interface Props{
 
 const Dropdown: React.FC<Props> = ({setState}) => {
     
-    const stockAvailable = async (e) => {
+    const stockAvailable = async (e:any) => {
         try{
             const val = await getStock(e.target.value);
             setState(val?.qty);
